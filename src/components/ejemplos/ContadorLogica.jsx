@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Contador from './Contador';
 
 const ContadorLogica = ({ stock }) => {
