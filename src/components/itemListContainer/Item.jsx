@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Item = ({ producto }) => {
   return (
-    <div className="item">
+    <Link to={'/libros/' + producto.id} className="item">
       <img src={producto.imagen} width={200} alt="foto libro" />
-      <p>{producto.nombre}</p>
-      <p>{producto.descripcion}</p>
+      <p><strong>{producto.nombre}</strong></p>
+      <p><strong>{producto.autor}</strong></p>
       <p>{producto.categoria}</p>
       <p>precio: ${producto.precio}</p>
-    </div>
+    </Link>
   );
 };
 export default Item;

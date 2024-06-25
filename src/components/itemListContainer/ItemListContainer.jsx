@@ -4,9 +4,12 @@ import ItemList from "./ItemList";
 import useLoading from "../../hooks/useLoading";
 import "./ItemListContainer.css"
 import Loading from "../loading_screen/Loading";
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ saludo }) => {
   const [productos, setProductos] = useState([]);
+
+  const { id } = useParams();
 
   const { isLoading, showLoading, hideLoading } = useLoading();
 
@@ -15,6 +18,9 @@ const ItemListContainer = ({ saludo }) => {
     showLoading();
     obtenerProductos()
       .then((respuesta) => {
+        if (id) {
+          respuesta = respuesta.filter((producto) => producto.categoria === id);
+        }
         setProductos(respuesta);
       })
       .catch((error) => {
@@ -24,7 +30,7 @@ const ItemListContainer = ({ saludo }) => {
         console.log("finalizo la promesa");
         hideLoading();
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="itemlistcontainer">

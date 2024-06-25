@@ -2,18 +2,25 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import ListarProductosConBuscador from './components/HOC/ListarProductos'
-import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
 import Item from './components/itemListContainer/Item'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Error from './components/ejemplos/Error'
 
 function App() {
 
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer saludo="Bienvenido a tu Libreria online de confianza :)"/>
-      <ItemDetailContainer />
-    </div>
+
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:id" element={<ItemListContainer />} />
+        <Route path='/libros/:idLibro' element={<ItemDetailContainer />}></Route>
+        <Route path='*' element={<Error />} />
+      </ Routes>
+    </BrowserRouter>
   )
 }
 

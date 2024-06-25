@@ -1,16 +1,17 @@
-.itemlistcontainer{
-
+.itemlistcontainer {
+  padding: 20px;
 }
-.itemlist{
-  display: flex;
-  justify-content: space-around;
+
+.itemlist {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 }
 
 .item {
-  width: 30%;
-  margin: 10px;
-  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 10px;
   text-align: center;
+  text-decoration: none;
 }
