@@ -6,6 +6,7 @@ import Item from './components/itemListContainer/Item'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Error from './components/ejemplos/Error'
+import ContadorEventListener from './components/ejemplos/ContadorEventListener.jsx'
 
 function App() {
 
@@ -13,7 +14,6 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:id" element={<ItemListContainer />} />

@@ -5,7 +5,7 @@
 .itemlist {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 20px;
 }
 
 .item {
@@ -14,4 +14,14 @@
   padding: 10px;
   text-align: center;
   text-decoration: none;
+}
+
+.expandir {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.contraer {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
 }
