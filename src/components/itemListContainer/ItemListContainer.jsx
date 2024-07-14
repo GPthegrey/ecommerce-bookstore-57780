@@ -1,9 +1,9 @@
 import { obtenerProductos } from "../../data/data.js";
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
-import useLoading from "../../hooks/useLoading";
+import ItemList from "./ItemList.jsx";
+import useLoading from "../../hooks/useLoading.jsx";
 import "./ItemListContainer.css"
-import Loading from "../loading_screen/Loading";
+import Loading from "../loading_screen/Loading.jsx";
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ saludo }) => {

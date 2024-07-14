@@ -1,14 +1,20 @@
-import React from 'react'
-import { TiShoppingCart } from "react-icons/ti";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
+import { BsBagDash } from "react-icons/bs";
 
 const CartWidget = () => {
+
+  const { cantidadTotal } = useContext(CartContext)
+
+  let cantidad = cantidadTotal()
+
   return (
-    <div className='cartWidget'>
-      <TiShoppingCart className='cart'/>
-      <p>1</p>
-    </div>
+    <Link to="/carrito" className="cartwidget">
+      <BsBagDash size={35} />
+      <p>{ cantidad > 0 && cantidad }</p>
+    </Link>
   )
 }
-
 export default CartWidget

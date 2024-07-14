@@ -1,25 +1,27 @@
-import './App.css'
-import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/itemListContainer/ItemListContainer'
-import ListarProductosConBuscador from './components/HOC/ListarProductos'
-import Item from './components/itemListContainer/Item'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Error from './components/ejemplos/Error'
-import ContadorEventListener from './components/ejemplos/ContadorEventListener.jsx'
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Error from "./components/Ejemplos/Error";
+import { CartProvider } from "./context/CartContext";
+import Carrito from "./components/Carrito/Carrito";
 
 function App() {
 
 
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:id" element={<ItemListContainer />} />
-        <Route path='/libros/:idLibro' element={<ItemDetailContainer />}></Route>
-        <Route path='*' element={<Error />} />
-      </ Routes>
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categoria/:id" element={<ItemListContainer />} />
+          <Route path='/libros/:idLibro' element={<ItemDetailContainer />}></Route>
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path='*' element={<Error />} />
+        </ Routes>
+      </CartProvider>
     </BrowserRouter>
   )
 }
