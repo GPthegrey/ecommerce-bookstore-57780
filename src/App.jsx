@@ -5,10 +5,11 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error from "./components/Ejemplos/Error";
 import { CartProvider } from "./context/CartContext";
-import Carrito from "./components/Carrito/Carrito";
+import Carrito from "./components/Cart/Carrito";
+import Checkout from "./components/Checkout/Checkout";
+import Footer from "./components/footer/Footer";
 
 function App() {
-
 
   return (
     <BrowserRouter>
@@ -19,8 +20,10 @@ function App() {
           <Route path="/categoria/:id" element={<ItemListContainer />} />
           <Route path='/libros/:idLibro' element={<ItemDetailContainer />}></Route>
           <Route path="/carrito" element={<Carrito />} />
+          <Route path="/checkout" element={<Checkout />}  />
           <Route path='*' element={<Error />} />
         </ Routes>
+        <Footer />
       </CartProvider>
     </BrowserRouter>
   )

@@ -1,0 +1,33 @@
+.item-count-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-count-container button,
+.item-count-container p {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.item-count-container p {
+  margin: 0;
+  min-width: 40px;
+  text-align: center;
+}
+
+.item-count-container button {
+  cursor: pointer;
+}
+
+.item-count-container .add-to-cart {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+}
+
+.item-count-container .add-to-cart:hover {
+  background-color: #005bb5;
+}

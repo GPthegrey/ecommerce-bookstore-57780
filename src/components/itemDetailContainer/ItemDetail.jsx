@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ItemDetail.css';
-import ItemCounter from '../ItemCount/ItemCounter';
+import ItemCount from '../ItemCount/ItemCount';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
-  const addToCart = (count) => {
-    const productoCarrito = {
-      item: item,
-      cantidad: count,
-    };
+  const { agregarProducto } = useContext(CartContext);
 
-    // You can now handle adding the item to the cart here
+  const addToCart = (count) => {
+    const productoCarrito = { ...item, cantidad: count };
+    agregarProducto(productoCarrito);
     console.log('Adding to cart:', productoCarrito);
   };
 
   return (
-    <div>
-      <div className="card">
-        <h2>{item.nombre}</h2>
-        <p>Autor: {item.autor}</p>
-        <p>{item.categoria}</p>
-        <img src={item.imagen} alt={item.nombre} />
-        <p>Descripcion: {item.descripcion}</p>
-        <p>${item.precio}</p>
-        <ItemCounter addToCart={addToCart} />
+    <div className="card">
+      <img src={item.imagen} alt={item.nombre} />
+      <h2>{item.nombre}</h2>
+      <p>Autor: {item.autor}</p>
+      <p>{item.categoria}</p>
+      <p>Descripcion: {item.descripcion}</p>
+      <p className="price">${item.precio}</p>
+      <div className="item-count">
+        <ItemCount stock={item.stock} agregarAlCarrito={addToCart} />
       </div>
     </div>
   );

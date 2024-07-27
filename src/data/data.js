@@ -69,9 +69,27 @@ const productos = [
     stock: 35,
     categoria: 'biografia',
     imagen: "/img/mandela.jpg"
-  }
-
-
+  },
+  {
+    id: 8,
+    nombre: 'Poirot investiga',
+    autor: 'Agatha Christie',
+    precio: 800,
+    descripcion: 'Poirot investiga es una colección de relatos de la escritora británica Agatha Christie, publicada en 1924. La colección reúne doce relatos cortos protagonizados por el detective belga Hercule Poirot, uno de los personajes más conocidos de la autora.',
+    stock: 35,
+    categoria: 'policial',
+    imagen: "/img/poirot.png"
+  },
+  {
+    id: 9,
+    nombre: 'Medicina de urgencias y emergencias',
+    autor: 'F. Javier Montero Pérez (Redactor), Luis Jiménez Murillo (Redactor)',
+    precio: 35000,
+    descripcion: 'Medicina de urgencias y emergencias es una obra que aborda de forma clara y concisa los aspectos más relevantes de la medicina de urgencias y emergencias, tanto en el ámbito hospitalario como extrahospitalario. ',
+    stock: 3,
+    categoria: 'ciencia',
+    imagen: "/img/medico.png"
+  },
 ];
 
   const obtenerProductos = () => {
